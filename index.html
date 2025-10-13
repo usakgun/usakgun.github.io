@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>usakgun - Software Engineer CV</title>
+    <meta name="description" content="The personal portfolio and CV of usakgun, a Software Engineer with 3 years of experience in test automation, API testing, and CI/CD processes.">
+    <meta name="author" content="usakgun">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" id="brand-link" class="nav-branding">usakgun</a>
+                <div class="nav-right">
+                    <ul class="nav-menu" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a href="#" id="home-link" class="nav-link" role="tab" aria-selected="true" data-translate-key="navHome">Home</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a href="#" id="about-link" class="nav-link" role="tab" aria-selected="false" data-translate-key="navAbout">About</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a href="#" id="contact-link" class="nav-link" role="tab" aria-selected="false" data-translate-key="navContact">Contact</a>
+                        </li>
+                        <div class="nav-underline"></div>
+                    </ul>
+                    <div class="controls-container">
+                        <div class="lang-switcher">
+                            <button id="lang-en" class="lang-btn active-lang">EN</button>
+                            <span>/</span>
+                            <button id="lang-tr" class="lang-btn">TR</button>
+                        </div>
+                        <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle theme">☀️</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="home-content" class="content-section active" role="tabpanel">
+                <div class="content-box">
+                    <h2 data-translate-key="educationTitle">EDUCATION</h2>
+                    <div class="cv-item">
+                        <h3 data-translate-key="bauName">Bahçeşehir University</h3>
+                        <p><strong data-translate-key="bauMaster">Master's Degree in Computer Engineering</strong> <span data-translate-key="bauMasterDate">(September 2025 - Ongoing)</span></p>
+                        <p><strong data-translate-key="bauBachelor">Bachelor's Degree in Computer Engineering</strong> <span data-translate-key="bauBachelorDate">(September 2017 - July 2021)</span></p>
+                        <ul>
+                            <li data-translate-key="bauDetail1">Board Member: Aerospace Community</li>
+                            <li data-translate-key="bauDetail2">Member: Al Community, Software Community, IEEE Community</li>
+                            <li data-translate-key="bauDetail3">2017-2018 Fall Semester Honour Roll</li>
+                        </ul>
+                    </div>
+                    <div class="cv-item">
+                        <h3 data-translate-key="politoName">Politecnico di Torino</h3>
+                        <p><strong data-translate-key="politoMaster">Master's Degree in Computer Engineering</strong> <span data-translate-key="politoDate">(October 2023 - December 2024)</span></p>
+                        <p><em data-translate-key="politoDetail">Completed the first year of the Master's program; the degree was not completed.</em></p>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <h2 data-translate-key="experienceTitle">PROFESSIONAL EXPERIENCE (3 YEARS)</h2>
+                    <div class="cv-item">
+                        <h3>Vodafone Türkiye</h3>
+                        <p><strong data-translate-key="vodafoneRole">Software Engineer</strong> <span data-translate-key="vodafoneDate">(February 2022 - August 2023)</span></p>
+                        <ul>
+                            <li data-translate-key="vodafoneDetail1">Served as Scrum Master for a core squad automating end- to-end test processes for Vodafone's internal teams.</li>
+                            <li data-translate-key="vodafoneDetail2">Worked as an outsourced employee from Netas.</li>
+                            <li data-translate-key="vodafoneDetail3">Technologies used: Java, Selenium, RestAPI, SSH, Linux commands, TestNG, Maven, Allure, Jenkins.</li>
+                        </ul>
+                    </div>
+                    <div class="cv-item">
+                        <h3>Netaş</h3>
+                        <p><strong data-translate-key="netasRole1">Test Automation Development Engineer</strong> <span data-translate-key="netasDate1">(August 2021 - January 2022)</span></p>
+                        <ul>
+                            <li data-translate-key="netasDetail1">Developed test scripts for the Turkcell TV+ application and executed test suites in Jenkins.</li>
+                            <li data-translate-key="netasTechs1">Used Java, Appium, Selenium, Gradle, Gherkin, Cucumber, Allure, Jenkins, Jira, and Atlassian Stash.</li>
+                        </ul>
+                        <p><strong data-translate-key="netasRole2">Test Automation Engineer</strong> <span data-translate-key="netasDate2">(November 2020 - July 2021)</span></p>
+                        <ul>
+                            <li data-translate-key="netasDetail2">Developed scripts for test cases of the Turkcell BiP application and executed test suites in Jenkins (4 days a week).</li>
+                            <li data-translate-key="netasTechs2">Technologies used: Java, Appium, Gradle, Gherkin, Cucumber. Allure, Jenkins, Jira, and Atlassian Stash.</li>
+                        </ul>
+                        <p><strong data-translate-key="netasRole3">Intern</strong> <span data-translate-key="netasDate3">(July 2020 - August 2020)</span></p>
+                        <ul>
+                            <li data-translate-key="netasDetail3">Developed scripts for test cases of the Turkcell BiP application and executed test suites in Jenkins.</li>
+                            <li data-translate-key="netasTechs3">Utilized Java, Appium, Gradle, Gherkin, Cucumber, Allure, Jenkins, Jira, and Atlassian Stash.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <h2 data-translate-key="competenceTitle">COMPETENCE</h2>
+                    <h3 data-translate-key="competenceSubTitle">Tools and Technologies:</h3>
+                    <ul>
+                        <li><strong data-translate-key="competenceList1">Languages & Principles:</strong> OOP Principles, Java, Gherkin, Javascript, Typescript, NodeJS</li>
+                        <li><strong data-translate-key="competenceList2">Frameworks & Libraries:</strong> Selenium, Appium, RestAPI, SSH, Oracle DB, Allure, Cucumber, TestNG, Maven, Gradle, MongoDB, Jest, Express.js</li>
+                        <li><strong data-translate-key="competenceList3">Methodologies & Platforms:</strong> Agile methodology, Jenkins, Bitbucket, Jira</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="about-content" class="content-section" role="tabpanel">
+                <div class="content-box">
+                    <h2 data-translate-key="aboutTitle">ABOUT ME</h2>
+                    <p class="about-text" data-translate-key="aboutParagraph">
+                        I am a Software Engineer with 3 years of professional experience, specializing in Java-based test automation, API testing, and CI/CD processes. Throughout my career at leading telecommunication companies like Turkcell and Vodafone, I have successfully automated complex test scenarios using modern technologies such as Selenium, Appium, and Jenkins. I have experience working with Agile methodologies and have served as a Scrum Master. I hold a Bachelor's degree in Computer Engineering from Bahçeşehir University and am currently pursuing my Master's degree in the same field. I am focused on continuous learning and improving my skills with new technologies.
+                    </p>
+                </div>
+            </div>
+
+            <div id="contact-content" class="content-section" role="tabpanel">
+                <div class="content-box">
+                    <h2 data-translate-key="contactTitle">CONTACT</h2>
+                    <p class="text-center" data-translate-key="contactSubTitle">You can reach me through the channels below.</p>
+                    <div class="contact-info large-contact text-center">
+                        <p><a href="mailto:umutsakgun@gmail.com">umutsakgun@gmail.com</a></p>
+                        <p><a href="https://linkedin.com/in/umutsabriakgun" target="_blank">linkedin.com/in/umutsabriakgun</a></p>
+                        <p><a href="https://github.com/usakgun" target="_blank">github.com/usakgun</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <button id="back-to-top-btn" aria-label="Go to top" title="Go to top">↑</button>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 usakgun</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
