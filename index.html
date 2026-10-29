@@ -3,146 +3,667 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>usakgun - Software Engineer CV</title>
-    <meta name="description" content="The personal portfolio and CV of usakgun, a Software Engineer with 3 years of experience in test automation, API testing, and CI/CD processes.">
-    <meta name="author" content="usakgun">
+    <!-- %100 Güvenlik için Sıkı İçerik Güvenlik Politikası (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'none'; form-action 'none';">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Umut Sabri Akgün - Software Engineer Portfolio & CV">
+    <title>Umut Sabri Akgün | Software Engineer</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent: #2563eb;
+            --accent-bg: #eff6ff;
+            --border-color: #e2e8f0;
+            --tag-bg: #f1f5f9;
+            --tag-text: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        }
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --card-bg: #1e293b;
+                --text-main: #f8fafc;
+                --text-muted: #94a3b8;
+                --accent: #60a5fa;
+                --accent-bg: rgba(59, 130, 246, 0.15);
+                --border-color: #334155;
+                --tag-bg: #0f172a;
+                --tag-text: #cbd5e1;
+                --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            }
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Header / Hero */
+        header {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.25rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--tag-bg);
+            color: var(--text-main);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Sections */
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-main);
+        }
+
+        h2 svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--accent);
+        }
+
+        /* Timeline Items (Experience & Education) */
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.75rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent);
+        }
+
+        .item-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .item-org {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background-color: var(--tag-bg);
+            padding: 0.2rem 0.65rem;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+        }
+
+        .item-details {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .item-details ul {
+            list-style-position: inside;
+            margin-top: 0.4rem;
+        }
+
+        .item-details li {
+            margin-bottom: 0.35rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .skill-group {
+            background-color: var(--bg-color);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-group h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.85rem;
+            color: var(--text-main);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            font-weight: 500;
+            background-color: var(--card-bg);
+            color: var(--tag-text);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .project-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .project-desc li {
+            margin-left: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 2rem;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+                padding: 0;
+            }
+            header, section {
+                box-shadow: none;
+                margin-bottom: 1rem;
+                padding: 1.25rem;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+<div class="container">
+    <!-- HEADER -->
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <a href="#" id="brand-link" class="nav-branding">usakgun</a>
-                <div class="nav-right">
-                    <ul class="nav-menu" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a href="#" id="home-link" class="nav-link" role="tab" aria-selected="true" data-translate-key="navHome">Home</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a href="#" id="about-link" class="nav-link" role="tab" aria-selected="false" data-translate-key="navAbout">About</a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a href="#" id="contact-link" class="nav-link" role="tab" aria-selected="false" data-translate-key="navContact">Contact</a>
-                        </li>
-                        <div class="nav-underline"></div>
-                    </ul>
-                    <div class="controls-container">
-                        <div class="lang-switcher">
-                            <button id="lang-en" class="lang-btn active-lang">EN</button>
-                            <span>/</span>
-                            <button id="lang-tr" class="lang-btn">TR</button>
-                        </div>
-                        <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle theme">☀️</button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <h1>UMUT SABRİ AKGÜN</h1>
+        <div class="subtitle">Software Engineer</div>
+        <div class="contact-bar">
+            <!-- ESKİ MAİL ADRESİNİZİ AŞAĞIDAKİ İKİ YERE YAZABİLİRSİNİZ -->
+            <a href="mailto:umutsakgun@gmail.com" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                umutsakgun@gmail.com
+            </a>
+            <a href="https://usakgun.github.io" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                usakgun.github.io
+            </a>
+            <a href="https://linkedin.com/in/umutsabriakgun" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                linkedin.com/in/umutsabriakgun
+            </a>
+            <a href="https://github.com/usakgun" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                github.com/usakgun
+            </a>
+        </div>
     </header>
 
-    <main>
-        <div class="container">
-            <div id="home-content" class="content-section active" role="tabpanel">
-                <div class="content-box">
-                    <h2 data-translate-key="educationTitle">EDUCATION</h2>
-                    <div class="cv-item">
-                        <h3 data-translate-key="bauName">Bahçeşehir University</h3>
-                        <p><strong data-translate-key="bauMaster">Master's Degree in Computer Engineering</strong> <span data-translate-key="bauMasterDate">(September 2025 - Ongoing)</span></p>
-                        <p><strong data-translate-key="bauBachelor">Bachelor's Degree in Computer Engineering</strong> <span data-translate-key="bauBachelorDate">(September 2017 - July 2021)</span></p>
-                        <ul>
-                            <li data-translate-key="bauDetail1">Board Member: Aerospace Community</li>
-                            <li data-translate-key="bauDetail2">Member: Al Community, Software Community, IEEE Community</li>
-                            <li data-translate-key="bauDetail3">2017-2018 Fall Semester Honour Roll</li>
-                        </ul>
-                    </div>
-                    <div class="cv-item">
-                        <h3 data-translate-key="politoName">Politecnico di Torino</h3>
-                        <p><strong data-translate-key="politoMaster">Master's Degree in Computer Engineering</strong> <span data-translate-key="politoDate">(October 2023 - December 2024)</span></p>
-                        <p><em data-translate-key="politoDetail">Completed the first year of the Master's program; the degree was not completed.</em></p>
-                    </div>
-                </div>
+    <!-- EDUCATION -->
+    <section>
+        <h2>
+            <svg viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+            Education
+        </h2>
 
-                <div class="content-box">
-                    <h2 data-translate-key="experienceTitle">PROFESSIONAL EXPERIENCE (3 YEARS)</h2>
-                    <div class="cv-item">
-                        <h3>Vodafone Türkiye</h3>
-                        <p><strong data-translate-key="vodafoneRole">Software Engineer</strong> <span data-translate-key="vodafoneDate">(February 2022 - August 2023)</span></p>
-                        <ul>
-                            <li data-translate-key="vodafoneDetail1">Served as Scrum Master for a core squad automating end- to-end test processes for Vodafone's internal teams.</li>
-                            <li data-translate-key="vodafoneDetail2">Worked as an outsourced employee from Netas.</li>
-                            <li data-translate-key="vodafoneDetail3">Technologies used: Java, Selenium, RestAPI, SSH, Linux commands, TestNG, Maven, Allure, Jenkins.</li>
-                        </ul>
-                    </div>
-                    <div class="cv-item">
-                        <h3>Netaş</h3>
-                        <p><strong data-translate-key="netasRole1">Test Automation Development Engineer</strong> <span data-translate-key="netasDate1">(August 2021 - January 2022)</span></p>
-                        <ul>
-                            <li data-translate-key="netasDetail1">Developed test scripts for the Turkcell TV+ application and executed test suites in Jenkins.</li>
-                            <li data-translate-key="netasTechs1">Used Java, Appium, Selenium, Gradle, Gherkin, Cucumber, Allure, Jenkins, Jira, and Atlassian Stash.</li>
-                        </ul>
-                        <p><strong data-translate-key="netasRole2">Test Automation Engineer</strong> <span data-translate-key="netasDate2">(November 2020 - July 2021)</span></p>
-                        <ul>
-                            <li data-translate-key="netasDetail2">Developed scripts for test cases of the Turkcell BiP application and executed test suites in Jenkins (4 days a week).</li>
-                            <li data-translate-key="netasTechs2">Technologies used: Java, Appium, Gradle, Gherkin, Cucumber. Allure, Jenkins, Jira, and Atlassian Stash.</li>
-                        </ul>
-                        <p><strong data-translate-key="netasRole3">Intern</strong> <span data-translate-key="netasDate3">(July 2020 - August 2020)</span></p>
-                        <ul>
-                            <li data-translate-key="netasDetail3">Developed scripts for test cases of the Turkcell BiP application and executed test suites in Jenkins.</li>
-                            <li data-translate-key="netasTechs3">Utilized Java, Appium, Gradle, Gherkin, Cucumber, Allure, Jenkins, Jira, and Atlassian Stash.</li>
-                        </ul>
-                    </div>
+        <div class="timeline-item">
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Master's Degree in Computer Engineering</span>
+                    <span class="item-org"> — Bahçeşehir University</span>
                 </div>
+                <span class="item-date">September 2025 - Ongoing</span>
+            </div>
+            <div class="item-details">
+                <p><strong>GPA:</strong> 3.59 / 4.00</p>
+            </div>
+        </div>
 
-                <div class="content-box">
-                    <h2 data-translate-key="competenceTitle">COMPETENCE</h2>
-                    <h3 data-translate-key="competenceSubTitle">Tools and Technologies:</h3>
-                    <ul>
-                        <li><strong data-translate-key="competenceList1">Languages & Principles:</strong> OOP Principles, Java, Gherkin, Javascript, Typescript, NodeJS</li>
-                        <li><strong data-translate-key="competenceList2">Frameworks & Libraries:</strong> Selenium, Appium, RestAPI, SSH, Oracle DB, Allure, Cucumber, TestNG, Maven, Gradle, MongoDB, Jest, Express.js</li>
-                        <li><strong data-translate-key="competenceList3">Methodologies & Platforms:</strong> Agile methodology, Jenkins, Bitbucket, Jira</li>
+        <div class="timeline-item">
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Master's Degree in Computer Engineering</span>
+                    <span class="item-org"> — Politecnico di Torino</span>
+                </div>
+                <span class="item-date">October 2023 - Incomplete</span>
+            </div>
+            <div class="item-details">
+                <ul>
+                    <li>Only completed the first year of the program. Therefore I did not graduate.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Bachelor's Degree in Computer Engineering</span>
+                    <span class="item-org"> — Bahçeşehir University</span>
+                </div>
+                <span class="item-date">September 2017 - July 2021</span>
+            </div>
+            <div class="item-details">
+                <ul>
+                    <li><strong>Communities &amp; Honours:</strong> Board Member at Aerospace Community; Member at AI Community, Software Community, and IEEE Community. 2017-2018 Fall Semester Honour Roll.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL COMPETENCE -->
+    <section>
+        <h2>
+            <svg viewBox="0 0 24 24"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+            Technical Competence
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <h3>Programming &amp; Scripting</h3>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">NodeJS</span>
+                    <span class="tag">Gherkin</span>
+                    <span class="tag">Linux commands</span>
+                    <span class="tag">SSH</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h3>Machine Learning &amp; Data Science</h3>
+                <div class="tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Transformer Fine-Tuning (BERT)</span>
+                    <span class="tag">Regression &amp; Classification Models</span>
+                    <span class="tag">Exploratory Data Analysis (EDA)</span>
+                    <span class="tag">TF-IDF</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h3>Software &amp; Test Automation</h3>
+                <div class="tags">
+                    <span class="tag">OOP Principles</span>
+                    <span class="tag">Selenium</span>
+                    <span class="tag">Appium</span>
+                    <span class="tag">RestAPI</span>
+                    <span class="tag">Cucumber</span>
+                    <span class="tag">TestNG</span>
+                    <span class="tag">Jest</span>
+                    <span class="tag">Express.js</span>
+                    <span class="tag">Allure</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h3>Databases, Build &amp; DevOps</h3>
+                <div class="tags">
+                    <span class="tag">Oracle DB</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Maven</span>
+                    <span class="tag">Gradle</span>
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">Bitbucket</span>
+                    <span class="tag">Atlassian Stash</span>
+                    <span class="tag">Jira</span>
+                    <span class="tag">Agile methodology</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONAL PROJECTS -->
+    <section>
+        <h2>
+            <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-2.06 11L15 15.28 12.06 17l.78-3.33-2.59-2.24 3.41-.29L15 8l1.34 3.14 3.41.29-2.59 2.24.78 3.33z"/></svg>
+            Personal Projects
+        </h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title">Hate Speech Detection Analysis</div>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Benchmarked a standard LSTM model against a fine-tuned BERT (bert-base-uncased) on the Davidson dataset (24k+ tweets).</li>
+                        <li>Demonstrated the superiority of Transformer-based contextual embeddings, with BERT achieving ~91% test accuracy compared to the baseline LSTM, effectively minimizing false positives in offensive language detection.</li>
                     </ul>
                 </div>
-            </div>
-
-            <div id="about-content" class="content-section" role="tabpanel">
-                <div class="content-box">
-                    <h2 data-translate-key="aboutTitle">ABOUT ME</h2>
-                    <p class="about-text" data-translate-key="aboutParagraph">
-                        I am a Software Engineer with 3 years of professional experience, specializing in Java-based test automation, API testing, and CI/CD processes. Throughout my career at leading telecommunication companies like Turkcell and Vodafone, I have successfully automated complex test scenarios using modern technologies such as Selenium, Appium, and Jenkins. I have experience working with Agile methodologies and have served as a Scrum Master. I hold a Bachelor's degree in Computer Engineering from Bahçeşehir University and am currently pursuing my Master's degree in the same field. I am focused on continuous learning and improving my skills with new technologies.
-                    </p>
+                <div class="tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Transformers</span>
+                    <span class="tag">Fine-Tuning</span>
+                    <span class="tag">NLP</span>
                 </div>
             </div>
 
-            <div id="contact-content" class="content-section" role="tabpanel">
-                <div class="content-box">
-                    <h2 data-translate-key="contactTitle">CONTACT</h2>
-                    <p class="text-center" data-translate-key="contactSubTitle">You can reach me through the channels below.</p>
-                    <div class="contact-info large-contact text-center">
-                        <p><a href="mailto:umutsakgun@gmail.com">umutsakgun@gmail.com</a></p>
-                        <p><a href="https://linkedin.com/in/umutsabriakgun" target="_blank">linkedin.com/in/umutsabriakgun</a></p>
-                        <p><a href="https://github.com/usakgun" target="_blank">github.com/usakgun</a></p>
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title">Content-Based Movie Recommender</div>
                     </div>
+                    <ul class="project-desc">
+                        <li>Engineered a TF-IDF/Cosine Similarity engine on 13M+ ratings. Optimized memory with chunk sampling and vectorized operations to process 1.4GB data, achieving 0.75 MAE and 51% Hit Ratio.</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Big Data Processing</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title">Colour Sort Puzzle Clone</div>
+                        <a href="https://github.com/usakgun/colour_sort_clone" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Developed a mobile color-sorting puzzle game clone from scratch, implementing core game-loop mechanics, state validation rules, and move-history tracking algorithms.</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Game Logic</span>
+                    <span class="tag">State Validation</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title">Virtual Sight AR Pipeline</div>
+                        <a href="https://github.com/usakgun/virtual_sight_AR_pipeline" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Built an end-to-end computer vision and Augmented Reality (AR) processing pipeline to handle visual inputs and spatial data.</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">AR</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title">California Housing ML &amp; Video Game Sales EDA</div>
+                        <a href="https://github.com/usakgun" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Built and evaluated machine learning regression models on the California Housing dataset (california_housing_ML_project), performing data preprocessing and feature extraction.</li>
+                        <li>Conducted Exploratory Data Analysis (EDA) on video game sales (video_game_sales_EDA) to analyze market and genre trends.</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Regression</span>
+                    <span class="tag">EDA</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title">Acoustic Gender Recognition</div>
+                    </div>
+                    <ul class="project-desc">
+                        <li>Built a binary classification pipeline analyzing acoustic voice features. Benchmarked Decision Tree against Random Forest, utilizing ensemble learning to achieve ~97% accuracy on the Voice Gender dataset.</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Random Forest</span>
+                    <span class="tag">Ensemble Learning</span>
                 </div>
             </div>
         </div>
-    </main>
-    
-    <button id="back-to-top-btn" aria-label="Go to top" title="Go to top">↑</button>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <section>
+        <h2>
+            <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+            Professional Experience (3 Years)
+        </h2>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Test Automation Development Engineer</span>
+                    <span class="item-org"> — Netaş</span>
+                </div>
+                <span class="item-date">February 2022 - August 2023</span>
+            </div>
+            <div class="item-details">
+                <ul>
+                    <li>Served as Scrum Master for a core squad automating end-to-end test processes for Vodafone's internal teams (worked as an outsourced employee from Netaş).</li>
+                    <li><strong>Technologies:</strong> Java, Selenium, Rest API, SSH, Linux commands, TestNG, Maven, Allure, Jenkins.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Test Automation Development Engineer</span>
+                    <span class="item-org"> — Netaş</span>
+                </div>
+                <span class="item-date">August 2021 - January 2022</span>
+            </div>
+            <div class="item-details">
+                <ul>
+                    <li>Developed test scripts for the Turkcell TV+ application and executed test suites in Jenkins.</li>
+                    <li><strong>Technologies:</strong> Java, Appium, Selenium, Gradle, Gherkin, Cucumber, Allure, Jenkins, Jira, and Atlassian Stash.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Test Automation Engineer</span>
+                    <span class="item-org"> — Netaş</span>
+                </div>
+                <span class="item-date">November 2020 - July 2021</span>
+            </div>
+            <div class="item-details">
+                <ul>
+                    <li>Developed scripts for test cases of the Turkcell BiP application and executed test suites in Jenkins (4 days a week).</li>
+                    <li><strong>Technologies:</strong> Java, Appium, Gradle, Gherkin, Cucumber, Allure, Jenkins, Jira, and Atlassian Stash.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-header">
+                <div>
+                    <span class="item-title">Intern</span>
+                    <span class="item-org"> — Netaş</span>
+                </div>
+                <span class="item-date">July 2020 - August 2020</span>
+            </div>
+            <div class="item-details">
+                <ul>
+                    <li>Developed scripts for test cases of the Turkcell BiP application and executed test suites in Jenkins.</li>
+                    <li><strong>Technologies:</strong> Java, Appium, Gradle, Gherkin, Cucumber, Allure, Jenkins, Jira, and Atlassian Stash.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 usakgun</p>
-        </div>
+        &copy; Umut Sabri Akgün. Hosted on GitHub Pages.
     </footer>
+</div>
 
-    <script src="script.js"></script>
 </body>
 </html>
