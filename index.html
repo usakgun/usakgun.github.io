@@ -11,7 +11,6 @@
         :root[data-theme="light"] {
             --bg-color: #f4f7f6;
             --card-bg: #ffffff;
-            --nav-bg: rgba(255, 255, 255, 0.88);
             --text-main: #111827;
             --text-muted: #4b5563;
             --accent: #059669;
@@ -27,7 +26,6 @@
         :root[data-theme="dark"] {
             --bg-color: #0b0f17;
             --card-bg: #151c28;
-            --nav-bg: rgba(21, 28, 40, 0.88);
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
             --accent: #10b981;
@@ -48,7 +46,6 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 84px;
         }
 
         body {
@@ -56,7 +53,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 0 1rem 4rem;
+            padding: 2rem 1rem 4rem;
             transition: background-color 0.25s ease, color 0.25s ease;
         }
 
@@ -65,76 +62,38 @@
             margin: 0 auto;
         }
 
-        .sticky-nav {
-            position: sticky;
-            top: 12px;
-            z-index: 900;
-            background-color: var(--nav-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 0.6rem 1rem;
-            margin: 1rem auto 1.5rem;
-            max-width: 980px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.75rem;
-            box-shadow: var(--shadow);
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-        }
-
-        .nav-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
-            padding: 0.4rem 0.75rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-            background-color: var(--accent-soft);
-        }
-
         .top-controls {
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            justify-content: flex-end;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
         }
 
         .control-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            background-color: var(--tag-bg);
+            gap: 0.45rem;
+            background-color: var(--card-bg);
             color: var(--text-main);
             border: 1px solid var(--border-color);
-            padding: 0.42rem 0.8rem;
-            border-radius: 8px;
-            font-size: 0.82rem;
+            padding: 0.5rem 0.9rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
             font-weight: 600;
             cursor: pointer;
+            box-shadow: var(--shadow);
             transition: all 0.2s ease;
         }
 
         .control-btn:hover {
             border-color: var(--accent);
             color: var(--accent);
+            transform: translateY(-1px);
         }
 
         .control-btn svg {
-            width: 15px;
-            height: 15px;
+            width: 16px;
+            height: 16px;
             fill: currentColor;
         }
 
@@ -142,10 +101,12 @@
             background: var(--header-gradient);
             border: 1px solid var(--border-color);
             border-radius: 18px;
-            padding: 2.5rem 2rem;
+            padding: 2.75rem 2rem;
             margin-bottom: 2rem;
             box-shadow: var(--shadow);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         h1 {
@@ -156,7 +117,7 @@
         }
 
         .subtitle {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--accent);
             font-weight: 700;
             letter-spacing: 0.08em;
@@ -168,73 +129,35 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.75rem;
+            gap: 0.85rem;
         }
 
-        .contact-pill {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--tag-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.2s ease;
-        }
-
-        .contact-pill:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        .copy-trigger {
+        .contact-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 0.85rem;
-            background: transparent;
+            padding: 0.55rem 1.05rem;
+            background-color: var(--tag-bg);
             color: var(--text-main);
-            border: none;
-            font-family: inherit;
-            font-size: 0.88rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: color 0.2s ease, background-color 0.2s ease;
-        }
-
-        .copy-trigger:hover {
-            color: var(--accent);
-            background-color: var(--accent-soft);
-        }
-
-        .copy-trigger svg {
-            width: 15px;
-            height: 15px;
-            fill: currentColor;
-            flex-shrink: 0;
-        }
-
-        .copy-badge {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            opacity: 0.75;
-            margin-left: 0.15rem;
-        }
-
-        .open-trigger {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 0.65rem;
-            color: var(--text-muted);
-            border-left: 1px solid var(--border-color);
             text-decoration: none;
-            font-size: 0.82rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
             transition: all 0.2s ease;
         }
 
-        .open-trigger:hover {
-            background-color: var(--accent);
-            color: #ffffff;
+        .contact-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background-color: var(--accent-soft);
+            transform: translateY(-2px);
+        }
+
+        .contact-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
 
         section {
@@ -250,7 +173,7 @@
         h2 {
             font-size: 1.35rem;
             font-weight: 700;
-            margin-bottom: 1.35rem;
+            margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
             border-bottom: 2px solid var(--border-color);
             display: flex;
@@ -263,47 +186,6 @@
             width: 22px;
             height: 22px;
             fill: var(--accent);
-            flex-shrink: 0;
-        }
-
-        .summary-text {
-            font-size: 0.98rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-        }
-
-        .thesis-box {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--accent);
-            border-radius: 12px;
-            padding: 1.25rem 1.35rem;
-        }
-
-        .thesis-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 0.45rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .thesis-badge {
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            background-color: var(--accent-soft);
-            color: var(--accent);
-            padding: 0.18rem 0.55rem;
-            border-radius: 6px;
-        }
-
-        .thesis-desc {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            margin-bottom: 0.85rem;
         }
 
         .timeline-item {
@@ -339,7 +221,7 @@
         }
 
         .item-title {
-            font-size: 1.08rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--text-main);
         }
@@ -361,7 +243,7 @@
 
         .item-details {
             color: var(--text-muted);
-            font-size: 0.94rem;
+            font-size: 0.95rem;
             margin-top: 0.45rem;
         }
 
@@ -410,9 +292,10 @@
             border: 1px solid var(--border-color);
         }
 
+        /* Projeler Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 1.25rem;
         }
 
@@ -442,36 +325,29 @@
         }
 
         .project-title {
-            font-size: 1.04rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--text-main);
-        }
-
-        .project-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            justify-content: flex-end;
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.2rem;
+            gap: 0.25rem;
             color: var(--accent);
             background-color: var(--accent-soft);
             padding: 0.2rem 0.55rem;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 600;
             white-space: nowrap;
-            transition: background-color 0.2s ease, color 0.2s ease;
+            transition: background-color 0.2s ease;
         }
 
         .project-link:hover {
             background-color: var(--accent);
-            color: #ffffff;
+            color: #fff;
         }
 
         .project-desc {
@@ -483,31 +359,6 @@
 
         .project-desc li {
             margin-bottom: 0.35rem;
-        }
-
-        #toast {
-            position: fixed;
-            bottom: 28px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background-color: var(--accent);
-            color: #ffffff;
-            padding: 0.6rem 1.2rem;
-            border-radius: 999px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.25s ease;
-            z-index: 1000;
-            pointer-events: none;
-        }
-
-        #toast.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
         }
 
         #backToTop {
@@ -556,21 +407,14 @@
             margin-top: 2.5rem;
         }
 
-        @media (max-width: 680px) {
-            .sticky-nav {
-                justify-content: center;
-                padding: 0.5rem;
-            }
-            .nav-links {
-                justify-content: center;
-            }
+        @media (max-width: 600px) {
             h1 { font-size: 1.9rem; }
             header, section { padding: 1.5rem 1.2rem; }
             #backToTop { bottom: 18px; right: 18px; width: 42px; height: 42px; }
         }
 
         @media print {
-            .sticky-nav, #backToTop, #toast { display: none !important; }
+            .top-controls, #backToTop { display: none !important; }
             body { background: #fff; color: #000; padding: 0; }
             header, section { box-shadow: none; margin-bottom: 1rem; padding: 1rem; page-break-inside: avoid; }
         }
@@ -578,96 +422,42 @@
 </head>
 <body>
 
-<nav class="sticky-nav" aria-label="Main Navigation">
-    <div class="nav-links">
-        <a href="#about" class="nav-link" data-en="About & Thesis" data-tr="Hakkımda & Tez">About &amp; Thesis</a>
-        <a href="#education" class="nav-link" data-en="Education" data-tr="Eğitim">Education</a>
-        <a href="#skills" class="nav-link" data-en="Skills" data-tr="Yetkinlikler">Skills</a>
-        <a href="#projects" class="nav-link" data-en="Projects" data-tr="Projeler">Projects</a>
-        <a href="#experience" class="nav-link" data-en="Experience" data-tr="Deneyim">Experience</a>
-    </div>
+<div class="container">
     <div class="top-controls">
         <button id="langToggle" class="control-btn" type="button" aria-label="Change Language">
             <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
             <span id="langLabel">TR</span>
         </button>
         <button id="themeToggle" class="control-btn" type="button" aria-label="Toggle Theme">
-            <svg viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+            <svg id="themeIcon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 0 0 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
             <span id="themeLabel" data-en="Light Mode" data-tr="Açık Tema">Light Mode</span>
         </button>
     </div>
-</nav>
 
-<div class="container">
     <header>
         <h1>UMUT SABRİ AKGÜN</h1>
         <div class="subtitle" data-en="SOFTWARE ENGINEER" data-tr="YAZILIM MÜHENDİSİ">SOFTWARE ENGINEER</div>
         <div class="contact-bar">
-            <div class="contact-pill">
-                <button type="button" class="copy-trigger" data-copy="umutsakgun@gmail.com" title="Click to copy">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    <span>umutsakgun@gmail.com</span>
-                    <span class="copy-badge" data-en="(Copy)" data-tr="(Kopyala)">(Copy)</span>
-                </button>
-                <a href="mailto:umutsakgun@gmail.com" class="open-trigger" title="Send Email">↗</a>
-            </div>
-
-            <div class="contact-pill">
-                <button type="button" class="copy-trigger" data-copy="https://usakgun.github.io" title="Click to copy">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                    <span>usakgun.github.io</span>
-                    <span class="copy-badge" data-en="(Copy)" data-tr="(Kopyala)">(Copy)</span>
-                </button>
-                <a href="https://usakgun.github.io" target="_blank" rel="noopener noreferrer" class="open-trigger" title="Open Website">↗</a>
-            </div>
-
-            <div class="contact-pill">
-                <button type="button" class="copy-trigger" data-copy="https://linkedin.com/in/umutsabriakgun" title="Click to copy">
-                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                    <span>linkedin.com/in/umutsabriakgun</span>
-                    <span class="copy-badge" data-en="(Copy)" data-tr="(Kopyala)">(Copy)</span>
-                </button>
-                <a href="https://linkedin.com/in/umutsabriakgun" target="_blank" rel="noopener noreferrer" class="open-trigger" title="Open LinkedIn">↗</a>
-            </div>
-
-            <div class="contact-pill">
-                <button type="button" class="copy-trigger" data-copy="https://github.com/usakgun" title="Click to copy">
-                    <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
-                    <span>github.com/usakgun</span>
-                    <span class="copy-badge" data-en="(Copy)" data-tr="(Kopyala)">(Copy)</span>
-                </button>
-                <a href="https://github.com/usakgun" target="_blank" rel="noopener noreferrer" class="open-trigger" title="Open GitHub">↗</a>
-            </div>
+            <a href="mailto:umutsakgun@gmail.com" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                umutsakgun@gmail.com
+            </a>
+            <a href="https://usakgun.github.io" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                usakgun.github.io
+            </a>
+            <a href="https://linkedin.com/in/umutsabriakgun" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                linkedin.com/in/umutsabriakgun
+            </a>
+            <a href="https://github.com/usakgun" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                github.com/usakgun
+            </a>
         </div>
     </header>
 
-    <section id="about">
-        <h2>
-            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-            <span data-en="About & Current M.Sc. Thesis Research" data-tr="Hakkımda & Yüksek Lisans Tez Araştırması">About &amp; Current M.Sc. Thesis Research</span>
-        </h2>
-        <p class="summary-text" data-en="Software Engineer with 3 years of professional experience in enterprise test automation and agile software delivery, combined with strong academic and practical expertise in Machine Learning, Natural Language Processing (NLP), and Multi-Agent LLM Systems." data-tr="Kurumsal test otomasyonu ve çevik yazılım geliştirme süreçlerinde 3 yıllık profesyonel deneyime sahip; Makine Öğrenmesi, Doğal Dil İşleme (NLP) ve Çok Etmenli (Multi-Agent) LLM Sistemleri üzerine akademik ve uygulamalı çalışmalar yürüten Yazılım Mühendisi.">
-            Software Engineer with 3 years of professional experience in enterprise test automation and agile software delivery, combined with strong academic and practical expertise in Machine Learning, Natural Language Processing (NLP), and Multi-Agent LLM Systems.
-        </p>
-        <div class="thesis-box">
-            <div class="thesis-title">
-                <span class="thesis-badge" data-en="Ongoing M.Sc. Thesis" data-tr="Devam Eden Yüksek Lisans Tezi">Ongoing M.Sc. Thesis</span>
-                <span>Code-Grounded Disagree-or-Commit (CG-DoC) for Multi-Agent Consensus on Tabular Data</span>
-            </div>
-            <p class="thesis-desc" data-en="Addressing conformity bias (sycophancy) and unverified hallucinations in multi-agent LLM committees. Designing a LangGraph-orchestrated architecture (Proposer, Auditor, and a deterministic rule-based Supervisor) with explicit query planning where agents must back every claim or objection with executable Pandas sandbox evidence against historical reference slices. Evaluated on high-stakes financial tabular datasets (PaySim, IEEE-CIS Fraud Detection, Credit Card Default) to reduce false-claim acceptance and improve PR-AUC." data-tr="Çok etmenli (multi-agent) LLM komitelerinde ajanların iddiaları doğrulamadan kabul etme eğilimini (sycophancy / uyma yanlılığı) ve halüsinasyonları önlemek üzerine odaklanmaktadır. LangGraph ile yönetilen Önerici (Proposer), Denetçi (Auditor) ve deterministik kural tabanlı Yönetici (Supervisor) mimarisinde; her iddianın ve itirazın açık sorgu planlaması (explicit query planning) ve izole bir Pandas sandbox ortamında çalıştırılan gerçek kod kanıtlarıyla doğrulanmasını zorunlu kılan CG-DoC yöntemi geliştirilmektedir. Sistem; yanlış iddia kabul oranını düşürmek ve PR-AUC başarımını artırmak amacıyla PaySim, IEEE-CIS Fraud Detection ve Credit Card Default finansal veri setleri üzerinde test edilmektedir.">
-                Addressing conformity bias (sycophancy) and unverified hallucinations in multi-agent LLM committees. Designing a LangGraph-orchestrated architecture (Proposer, Auditor, and a deterministic rule-based Supervisor) with explicit query planning where agents must back every claim or objection with executable Pandas sandbox evidence against historical reference slices. Evaluated on high-stakes financial tabular datasets (PaySim, IEEE-CIS Fraud Detection, Credit Card Default) to reduce false-claim acceptance and improve PR-AUC.
-            </p>
-            <div class="tags">
-                <span class="tag">Multi-Agent LLM</span>
-                <span class="tag">LangGraph</span>
-                <span class="tag">ReAct &amp; Code Execution</span>
-                <span class="tag">Sycophancy Reduction</span>
-                <span class="tag">Financial Fraud &amp; Credit Risk</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
+    <section>
         <h2>
             <svg viewBox="0 0 24 24"><path d="M12 3 1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
             <span data-en="Education" data-tr="Eğitim">Education</span>
@@ -677,15 +467,12 @@
             <div class="item-header">
                 <div>
                     <span class="item-title" data-en="Master's Degree in Computer Engineering" data-tr="Bilgisayar Mühendisliği Yüksek Lisans">Master's Degree in Computer Engineering</span>
-                    <span class="item-org" data-en=" — Bahçeşehir University" data-tr=" — Bahçeşehir Üniversitesi"> — Bahçeşehir University</span>
+                    <span class="item-org"> — Bahçeşehir University</span>
                 </div>
                 <span class="item-date" data-en="September 2025 - Ongoing" data-tr="Eylül 2025 - Devam Ediyor">September 2025 - Ongoing</span>
             </div>
             <div class="item-details">
-                <ul>
-                    <li><strong>GPA:</strong> 3.59 / 4.00</li>
-                    <li data-en="Thesis Topic: Code-Grounded Disagree-or-Commit (CG-DoC) for Multi-Agent Consensus on Tabular Data." data-tr="Tez Konusu: Tablosal Verilerde Çok Etmenli Uzlaşı için Kod Destekli İtiraz-veya-Kabul (CG-DoC) Mimarisi.">Thesis Topic: Code-Grounded Disagree-or-Commit (CG-DoC) for Multi-Agent Consensus on Tabular Data.</li>
-                </ul>
+                <p><strong>GPA:</strong> 3.59 / 4.00</p>
             </div>
         </div>
 
@@ -708,7 +495,7 @@
             <div class="item-header">
                 <div>
                     <span class="item-title" data-en="Bachelor's Degree in Computer Engineering" data-tr="Bilgisayar Mühendisliği Lisans">Bachelor's Degree in Computer Engineering</span>
-                    <span class="item-org" data-en=" — Bahçeşehir University" data-tr=" — Bahçeşehir Üniversitesi"> — Bahçeşehir University</span>
+                    <span class="item-org"> — Bahçeşehir University</span>
                 </div>
                 <span class="item-date" data-en="September 2017 - July 2021" data-tr="Eylül 2017 - Temmuz 2021">September 2017 - July 2021</span>
             </div>
@@ -720,7 +507,7 @@
         </div>
     </section>
 
-    <section id="skills">
+    <section>
         <h2>
             <svg viewBox="0 0 24 24"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
             <span data-en="Technical Competence" data-tr="Teknik Yetkinlikler">Technical Competence</span>
@@ -734,23 +521,21 @@
                     <span class="tag">JavaScript</span>
                     <span class="tag">NodeJS</span>
                     <span class="tag">Gherkin</span>
-                    <span class="tag" data-en="Linux commands" data-tr="Linux Komutları">Linux commands</span>
+                    <span class="tag">Linux commands</span>
                     <span class="tag">SSH</span>
                 </div>
             </div>
 
             <div class="skill-group">
-                <h3 data-en="AI, ML & Data Science" data-tr="Yapay Zeka, ML & Veri Bilimi">AI, ML &amp; Data Science</h3>
+                <h3 data-en="Machine Learning & Data Science" data-tr="Makine Öğrenmesi & Veri Bilimi">Machine Learning &amp; Data Science</h3>
                 <div class="tags">
                     <span class="tag">PyTorch</span>
-                    <span class="tag">LangGraph</span>
-                    <span class="tag">Multi-Agent LLMs</span>
-                    <span class="tag">Transformer Fine-Tuning (BERT)</span>
                     <span class="tag">Scikit-learn</span>
                     <span class="tag">Pandas</span>
                     <span class="tag">NumPy</span>
-                    <span class="tag" data-en="Regression & Classification" data-tr="Regresyon & Sınıflandırma">Regression &amp; Classification</span>
-                    <span class="tag">EDA</span>
+                    <span class="tag">Transformer Fine-Tuning (BERT)</span>
+                    <span class="tag">Regression &amp; Classification</span>
+                    <span class="tag">Exploratory Data Analysis (EDA)</span>
                     <span class="tag">TF-IDF</span>
                 </div>
             </div>
@@ -758,7 +543,7 @@
             <div class="skill-group">
                 <h3 data-en="Software & Test Automation" data-tr="Yazılım & Test Otomasyonu">Software &amp; Test Automation</h3>
                 <div class="tags">
-                    <span class="tag" data-en="OOP Principles" data-tr="OOP Prensipleri">OOP Principles</span>
+                    <span class="tag">OOP Principles</span>
                     <span class="tag">Selenium</span>
                     <span class="tag">Appium</span>
                     <span class="tag">RestAPI</span>
@@ -781,25 +566,22 @@
                     <span class="tag">Bitbucket</span>
                     <span class="tag">Atlassian Stash</span>
                     <span class="tag">Jira</span>
-                    <span class="tag" data-en="Agile methodology" data-tr="Çevik (Agile) Metodoloji">Agile methodology</span>
+                    <span class="tag">Agile methodology</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <section>
         <h2>
             <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-2.06 11L15 15.28 12.06 17l.78-3.33-2.59-2.24 3.41-.29L15 8l1.34 3.14 3.41.29-2.59 2.24.78 3.33z"/></svg>
-            <span data-en="Personal Projects" data-tr="Projeler">Personal Projects</span>
+            <span data-en="Personal Projects" data-tr="Kişisel Projeler">Personal Projects</span>
         </h2>
         <div class="projects-grid">
             <div class="project-card">
                 <div>
                     <div class="project-header">
                         <div class="project-title" data-en="Hate Speech Detection Analysis" data-tr="Nefret Söylemi Tespiti Analizi">Hate Speech Detection Analysis</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/Hate_Speech_Detection_LSTM_vs_BERT" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Benchmarked a standard LSTM model against a fine-tuned BERT (bert-base-uncased) on the Davidson dataset (24k+ tweets)." data-tr="Davidson veri seti (24k+ tweet) üzerinde standart LSTM modeli ile ince ayarlı BERT (bert-base-uncased) modeli karşılaştırıldı.">Benchmarked a standard LSTM model against a fine-tuned BERT (bert-base-uncased) on the Davidson dataset (24k+ tweets).</li>
@@ -818,9 +600,7 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title" data-en="Content-Based Movie Recommender" data-tr="İçerik Tabanlı Film Öneri Sistemi">Content-Based Movie Recommender</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/content_based_movie_recsys" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
+                        <a href="https://github.com/usakgun/content_based_movie_recsys" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Engineered a TF-IDF/Cosine Similarity engine on 13M+ ratings. Optimized memory with chunk sampling and vectorized operations to process 1.4GB data, achieving 0.75 MAE and 51% Hit Ratio." data-tr="13M+ değerlendirme üzerinde TF-IDF/Kosinüs Benzerliği motoru geliştirildi. 1.4GB veriyi işlemek için parça örnekleme ve vektörel işlemlerle bellek optimize edilerek 0.75 MAE ve %51 Hit Ratio elde edildi.">Engineered a TF-IDF/Cosine Similarity engine on 13M+ ratings. Optimized memory with chunk sampling and vectorized operations to process 1.4GB data, achieving 0.75 MAE and 51% Hit Ratio.</li>
@@ -837,50 +617,8 @@
             <div class="project-card">
                 <div>
                     <div class="project-header">
-                        <div class="project-title" data-en="Acoustic Gender Recognition" data-tr="Akustik Ses ile Cinsiyet Tanıma">Acoustic Gender Recognition</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/rf_voice_prediction" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
-                    </div>
-                    <ul class="project-desc">
-                        <li data-en="Built a binary classification pipeline analyzing acoustic voice features. Benchmarked Decision Tree against Random Forest, utilizing ensemble learning to achieve ~97% accuracy." data-tr="Akustik ses özelliklerini analiz eden ikili sınıflandırma hattı oluşturuldu. Karar Ağacı ve Rastgele Orman kıyaslanarak topluluk öğrenmesiyle ~%97 doğruluk elde edildi.">Built a binary classification pipeline analyzing acoustic voice features. Benchmarked Decision Tree against Random Forest, utilizing ensemble learning to achieve ~97% accuracy.</li>
-                    </ul>
-                </div>
-                <div class="tags">
-                    <span class="tag">Scikit-learn</span>
-                    <span class="tag">Random Forest</span>
-                    <span class="tag">Ensemble Learning</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <div class="project-header">
-                        <div class="project-title" data-en="California Housing ML & Video Game Sales EDA" data-tr="California Konut ML & Oyun Satışları EDA">California Housing ML &amp; Video Game Sales EDA</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/california_housing_ML_project" target="_blank" rel="noopener noreferrer" class="project-link">Housing ML ↗</a>
-                            <a href="https://github.com/usakgun/video_game_sales_EDA" target="_blank" rel="noopener noreferrer" class="project-link">Sales EDA ↗</a>
-                        </div>
-                    </div>
-                    <ul class="project-desc">
-                        <li data-en="Built and evaluated ML regression models on the California Housing dataset, performing data preprocessing and feature extraction." data-tr="California Housing veri seti üzerinde veri ön işleme ve özellik çıkarımı yapılarak ML regresyon modelleri kuruldu ve değerlendirildi.">Built and evaluated ML regression models on the California Housing dataset, performing data preprocessing and feature extraction.</li>
-                        <li data-en="Conducted Exploratory Data Analysis (EDA) on video game sales to analyze market and genre trends." data-tr="Pazar ve tür trendlerini analiz etmek için video oyunu satışları üzerinde Keşifsel Veri Analizi (EDA) gerçekleştirildi.">Conducted Exploratory Data Analysis (EDA) on video game sales to analyze market and genre trends.</li>
-                    </ul>
-                </div>
-                <div class="tags">
-                    <span class="tag">Scikit-learn</span>
-                    <span class="tag">Regression</span>
-                    <span class="tag">EDA</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <div class="project-header">
                         <div class="project-title" data-en="Collaborative Filtering Comparison" data-tr="İşbirlikçi Filtreleme Karşılaştırması">Collaborative Filtering Comparison</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/collaborative_filtering_comparison" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
+                        <a href="https://github.com/usakgun/collaborative_filtering_comparison" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Implemented and benchmarked User-Based, Item-Based, and Matrix Factorization collaborative filtering algorithms for recommendation accuracy and scalability." data-tr="Öneri doğruluğu ve ölçeklenebilirlik açısından Kullanıcı Tabanlı, Öğe Tabanlı ve Matris Ayrıştırma işbirlikçi filtreleme algoritmaları uygulandı ve kıyaslandı.">Implemented and benchmarked User-Based, Item-Based, and Matrix Factorization collaborative filtering algorithms for recommendation accuracy and scalability.</li>
@@ -897,9 +635,7 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title" data-en="TSP Optimization Benchmark" data-tr="Gezgin Satıcı Problemi (TSP) Optimizasyonu">TSP Optimization Benchmark</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/tsp_optimization_benchmark" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
+                        <a href="https://github.com/usakgun/tsp_optimization_benchmark" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Benchmarked heuristic and meta-heuristic optimization algorithms for solving the Traveling Salesman Problem (TSP), analyzing convergence speed and route optimality." data-tr="Gezgin Satıcı Problemini (TSP) çözmek için sezgisel ve meta-sezgisel optimizasyon algoritmaları kıyaslanarak yakınsama hızı ve rota optimalliği analiz edildi.">Benchmarked heuristic and meta-heuristic optimization algorithms for solving the Traveling Salesman Problem (TSP), analyzing convergence speed and route optimality.</li>
@@ -916,9 +652,7 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title" data-en="Bike Sharing Demand Regression" data-tr="Bisiklet Paylaşım Talebi Regresyonu">Bike Sharing Demand Regression</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/bike_sharing_demand_regression" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
+                        <a href="https://github.com/usakgun/bike_sharing_demand_regression" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Developed predictive regression models to forecast urban bike rental demand based on temporal and weather features, incorporating feature engineering and hyperparameter tuning." data-tr="Zaman ve hava durumu özelliklerine göre kentsel bisiklet kiralama talebini tahmin etmek için özellik mühendisliği ve hiperparametre optimizasyonu içeren regresyon modelleri geliştirildi.">Developed predictive regression models to forecast urban bike rental demand based on temporal and weather features, incorporating feature engineering and hyperparameter tuning.</li>
@@ -935,9 +669,7 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title" data-en="SVM Binary Classification" data-tr="SVM İkili Sınıflandırma Analizi">SVM Binary Classification</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/svm_binary_classification" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
+                        <a href="https://github.com/usakgun/svm_binary_classification" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Built a binary classification pipeline using Support Vector Machines (SVM), evaluating Linear, Polynomial, and RBF kernels with cross-validation and margin optimization." data-tr="Destek Vektör Makineleri (SVM) kullanılarak ikili sınıflandırma hattı oluşturuldu; Doğrusal, Polinom ve RBF çekirdekleri çapraz doğrulama ile değerlendirildi.">Built a binary classification pipeline using Support Vector Machines (SVM), evaluating Linear, Polynomial, and RBF kernels with cross-validation and margin optimization.</li>
@@ -954,9 +686,7 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title" data-en="Smarket Classification Comparison" data-tr="Borsa Yönü Sınıflandırma Kıyaslaması">Smarket Classification Comparison</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/classification_models_comparison_smarket" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
+                        <a href="https://github.com/usakgun/classification_models_comparison_smarket" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Comparative analysis of classification algorithms (Logistic Regression, LDA, QDA, KNN) on financial stock market data (Smarket) to predict market direction." data-tr="Piyasa yönünü tahmin etmek amacıyla finansal borsa verileri (Smarket) üzerinde sınıflandırma algoritmalarının (Lojistik Regresyon, LDA, QDA, KNN) karşılaştırmalı analizi yapıldı.">Comparative analysis of classification algorithms (Logistic Regression, LDA, QDA, KNN) on financial stock market data (Smarket) to predict market direction.</li>
@@ -973,9 +703,7 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title" data-en="Colour Sort Puzzle Clone" data-tr="Renk Sıralama Bulmaca Oyunu Klonu">Colour Sort Puzzle Clone</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/colour_sort_clone" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
+                        <a href="https://github.com/usakgun/colour_sort_clone" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Developed a mobile color-sorting puzzle game clone from scratch, implementing core game-loop mechanics, state validation rules, and move-history tracking algorithms." data-tr="Temel oyun döngüsü mekanikleri, durum doğrulama kuralları ve hamle geçmişi izleme algoritmaları sıfırdan geliştirilerek mobil renk sıralama bulmaca oyunu klonu yapıldı.">Developed a mobile color-sorting puzzle game clone from scratch, implementing core game-loop mechanics, state validation rules, and move-history tracking algorithms.</li>
@@ -991,9 +719,7 @@
                 <div>
                     <div class="project-header">
                         <div class="project-title" data-en="Virtual Sight AR Pipeline" data-tr="Virtual Sight AR İşleme Hattı">Virtual Sight AR Pipeline</div>
-                        <div class="project-links">
-                            <a href="https://github.com/usakgun/virtual_sight_AR_pipeline" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
-                        </div>
+                        <a href="https://github.com/usakgun/virtual_sight_AR_pipeline" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
                     </div>
                     <ul class="project-desc">
                         <li data-en="Built an end-to-end computer vision and Augmented Reality (AR) processing pipeline to handle visual inputs and spatial data." data-tr="Görsel girdileri ve uzamsal verileri işlemek için uçtan uca bilgisayarlı görü ve Artırılmış Gerçeklik (AR) işleme hattı oluşturuldu.">Built an end-to-end computer vision and Augmented Reality (AR) processing pipeline to handle visual inputs and spatial data.</li>
@@ -1004,10 +730,44 @@
                     <span class="tag">AR</span>
                 </div>
             </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title" data-en="California Housing ML & Video Game Sales EDA" data-tr="California Konut ML & Oyun Satışları EDA">California Housing ML &amp; Video Game Sales EDA</div>
+                        <a href="https://github.com/usakgun" target="_blank" rel="noopener noreferrer" class="project-link">GitHub ↗</a>
+                    </div>
+                    <ul class="project-desc">
+                        <li data-en="Built and evaluated ML regression models on the California Housing dataset, performing data preprocessing and feature extraction." data-tr="California Housing veri seti üzerinde veri ön işleme ve özellik çıkarımı yapılarak ML regresyon modelleri kuruldu ve değerlendirildi.">Built and evaluated ML regression models on the California Housing dataset, performing data preprocessing and feature extraction.</li>
+                        <li data-en="Conducted Exploratory Data Analysis (EDA) on video game sales to analyze market and genre trends." data-tr="Pazar ve tür trendlerini analiz etmek için video oyunu satışları üzerinde Keşifsel Veri Analizi (EDA) gerçekleştirildi.">Conducted Exploratory Data Analysis (EDA) on video game sales to analyze market and genre trends.</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Regression</span>
+                    <span class="tag">EDA</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-header">
+                        <div class="project-title" data-en="Acoustic Gender Recognition" data-tr="Akustik Ses ile Cinsiyet Tanıma">Acoustic Gender Recognition</div>
+                    </div>
+                    <ul class="project-desc">
+                        <li data-en="Built a binary classification pipeline analyzing acoustic voice features. Benchmarked Decision Tree against Random Forest, utilizing ensemble learning to achieve ~97% accuracy." data-tr="Akustik ses özelliklerini analiz eden ikili sınıflandırma hattı oluşturuldu. Karar Ağacı ve Rastgele Orman kıyaslanarak topluluk öğrenmesiyle ~%97 doğruluk elde edildi.">Built a binary classification pipeline analyzing acoustic voice features. Benchmarked Decision Tree against Random Forest, utilizing ensemble learning to achieve ~97% accuracy.</li>
+                    </ul>
+                </div>
+                <div class="tags">
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Random Forest</span>
+                    <span class="tag">Ensemble Learning</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="experience">
+    <section>
         <h2>
             <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
             <span data-en="Professional Experience (3 Years)" data-tr="Profesyonel Deneyim (3 Yıl)">Professional Experience (3 Years)</span>
@@ -1083,8 +843,6 @@
     </footer>
 </div>
 
-<div id="toast" role="status" aria-live="polite"></div>
-
 <button id="backToTop" type="button" aria-label="Back to top" title="Back to top">
     <svg viewBox="0 0 24 24"><path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
 </button>
@@ -1099,8 +857,6 @@
         const langToggle = document.getElementById("langToggle");
         const langLabel = document.getElementById("langLabel");
         const backToTop = document.getElementById("backToTop");
-        const toast = document.getElementById("toast");
-        let toastTimer = null;
 
         let currentLang = localStorage.getItem("cv_lang") || "en";
         let currentTheme = localStorage.getItem("cv_theme") || "dark";
@@ -1127,17 +883,6 @@
             });
         }
 
-        function showToast(message) {
-            toast.textContent = message;
-            toast.classList.add("show");
-            if (toastTimer) {
-                clearTimeout(toastTimer);
-            }
-            toastTimer = setTimeout(function () {
-                toast.classList.remove("show");
-            }, 2200);
-        }
-
         updateThemeUI(currentTheme);
         updateLangUI(currentLang);
 
@@ -1151,20 +896,6 @@
             currentLang = currentLang === "en" ? "tr" : "en";
             localStorage.setItem("cv_lang", currentLang);
             updateLangUI(currentLang);
-        });
-
-        const copyButtons = document.querySelectorAll(".copy-trigger");
-        copyButtons.forEach(function (btn) {
-            btn.addEventListener("click", function () {
-                const value = btn.getAttribute("data-copy");
-                if (!value) return;
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(value).then(function () {
-                        const prefix = currentLang === "tr" ? "Panoya kopyalandı: " : "Copied to clipboard: ";
-                        showToast(prefix + value);
-                    });
-                }
-            });
         });
 
         window.addEventListener("scroll", function () {
